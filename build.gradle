@@ -7,8 +7,19 @@ repositories {
     mavenCentral()
 }
 
-def selenideVersion = '6.1.1',
+def allureVersion = '2.17.2',
+    selenideVersion = '6.1.1',
     junitVersion = "5.8.2"
+
+allure {
+    version = allureVersion
+    autoconfigure = true
+    aspectjweaver = true
+    configuration = "testImplementation"
+    useJUnit5 {
+        version = allureVersion
+    }
+}
 
 dependencies {
     //noinspection GradlePackageUpdate
@@ -17,6 +28,9 @@ dependencies {
             "org.assertj:assertj-core:3.21.0",
             "org.aeonbits.owner:owner:1.0.12",
             "com.codeborne:selenide:$selenideVersion",
+            "org.aspectj:aspectjweaver:1.9.7",
+            "io.qameta.allure:allure-selenide:$allureVersion",
+            "io.qameta.allure:allure-rest-assured:$allureVersion",
             "org.junit.jupiter:junit-jupiter-api:$junitVersion")
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
 }
