@@ -18,6 +18,7 @@ import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static com.github.jjfhj.filters.CustomLogFilter.customLogFilter;
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
+import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 
 public class DemowebshopTest {
 
@@ -64,6 +65,7 @@ public class DemowebshopTest {
                         .post("addproducttocart/details/13/1")
                         .then().log().all()
                         .statusCode(200)
+                        .body(matchesJsonSchemaInClasspath("schema/AddItemToCartTestSchema.json"))
                         .extract()
                         .path("updatetopcartsectionhtml"));
 
@@ -86,6 +88,7 @@ public class DemowebshopTest {
                         .post("addproducttocart/details/13/1")
                         .then().log().all()
                         .statusCode(200)
+                        .body(matchesJsonSchemaInClasspath("schema/AddItemToCartTestSchema.json"))
                         .extract()
                         .path("updatetopcartsectionhtml"));
 
