@@ -1,2 +1,1 @@
-# Задание 18. REST API
-Для сайта магазина http://demowebshop.tricentis.com/ автоматизирована проверка UI-взаимодействия по API.
+# Автоматизация проверок UI-взаимодействия по API для сайта магазина [Demo Web Shop](http://demowebshop.tricentis.com/)
